@@ -28,7 +28,7 @@ module.exports = {
 			})
 
 			const resource = createAudioResource(
-				path.resolve(__dirname, "../../sounds", filename),
+				"sounds/" + filename,
 				{ inlineVolume : true }
 			);
 			resource.volume.setVolume(1.3);
