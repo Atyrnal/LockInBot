@@ -46,17 +46,17 @@ module.exports = {
 		if (activity != undefined && activity != null) {
 			newPresence.member.send(`Hell nah hop off ${activity.name} twin 💔\nYou got a game to make so LOCK IN`);
 			(await newPresence.guild.members.fetch(process.env.OWNER_ID)).send(`!!! ${newPresence.user.username} is on ${activity.name} !!!`);
-			playInVC(newPresence.member, activity.name.toLowerCase() + ".ogg")
+			playInVC(newPresence.member, activity.name.toLowerCase() + ".wav")
 			setTimeout( async () => {
 				const futurePresence = (await newPresence.member.fetch()).presence;
 				if (futurePresence.activities.some(act => act.name == activity.name)) {
 					futurePresence.member.send("DAWG I TOLD YOU GET OFF\nTS Aint gonna get made by a miracle bro\nYou waiting for a solar flare to magically corrupt your hard drive and create a game?? Nahhhh\nI believe in u dawg but u HAVE to lock in, remember the deal?");
-					playInVC(futurePresence.member, "stillon.ogg");
+					playInVC(futurePresence.member, "stillon.wav");
 				}
 			}, 90e3);
 		} else if (oldPresence.activities.some(act => (act.name.toLowerCase() == "roblox" || act.name.toLowerCase() == "league of legends"))) {
 			newPresence.member.send(`Good job now GET TO WORK`)
-			playInVC(newPresence.member, "goodjob.ogg")
+			playInVC(newPresence.member, "goodjob.wav")
 		}
 	}
 }
