@@ -4,7 +4,9 @@ const path = require("path");
 const dotenv = require("dotenv");
 const Logger = require("./logger.js").Logger
 
-dotenv.config();
+dotenv.config({
+	quiet: true
+});
 
 const log = new Logger("LockInBot");
 
