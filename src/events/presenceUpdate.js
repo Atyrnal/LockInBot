@@ -34,6 +34,11 @@ module.exports = {
 			resource.volume.setVolume(1.3);
 
 			await entersState(connection, VoiceConnectionStatus.Ready, 20e3);
+
+			if (member.guild.members.me.voice.serverMute == true) {
+				member.guild.members.me.voice.setMute(false);
+			}
+
 			player.play(resource);
 			connection.subscribe(player);
 			player.on(AudioPlayerStatus.Idle, () => {
