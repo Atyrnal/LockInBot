@@ -6,7 +6,7 @@ module.exports = {
 	name : Events.PresenceUpdate,
 	once : false,
 	async execute(oldPresence, newPresence) {
-		if (!JSON.parse(process.env.TARGET_IDS).includes(newPresence.userId)) return;
+		if (!process.env.TARGET_IDS.split(",").includes(newPresence.userId)) return;
 
 		async function playInVC(member, filename) {
 			const voiceChannel = member.voice.channel;
